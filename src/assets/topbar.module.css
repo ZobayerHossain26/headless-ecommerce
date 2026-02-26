@@ -53,3 +53,15 @@
     width: 16px;
     height: 16px;
 }
+
+@media (max-width:767px){
+    .topbar_right{
+        display: none;
+    }
+    .topbar_review {
+        display: none;
+    }
+    .topbar_left_item{
+        padding-left: 30px;
+    }
+}
