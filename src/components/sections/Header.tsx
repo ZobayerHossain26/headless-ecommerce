@@ -1,7 +1,9 @@
 import styles from "../../assets/header.module.css"
+import Sidebar from "../ui/Sidebar";
 
 
 const Header = () => {
+ 
     return (
         <section>
             <div className="container">
@@ -13,9 +15,7 @@ const Header = () => {
                         <div className="call">
                             <img src="/dial_icon.png" alt="phone call icon" aria-hidden="true" />
                         </div>
-                        <div className="bar">
-                            <img src="/hamburger.png" alt="" aria-hidden="true" />
-                        </div>
+                        <Sidebar />
                     </div>
                     <div className={styles.desktop_menu}>
                         <nav>
