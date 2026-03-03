@@ -1,0 +1,142 @@
+.hero_section {
+    position: relative;
+}
+
+.blur {
+    position: relative;
+    width: 100%;
+    border-radius: 0 50% 50% 0;
+    overflow: hidden;
+}
+
+.hero_image {
+    width: calc(100vw - (100vw - 1240px) / 2);
+    margin-right: auto;
+}
+
+.hero_image img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+.content_wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-25) 0;
+}
+
+.content_box {
+    max-width: 453px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+
+}
+
+.title h1 {
+    font-size: 85px;
+    font-weight: 600;
+    line-height: 85px;
+}
+
+.title h1 span {
+    color: var(--color-green);
+}
+
+.description {
+    max-width: 394px;
+}
+
+.description p {
+    font-size: 17px;
+    line-height: 150%;
+    letter-spacing: 5%;
+    font-weight: 400;
+}
+
+.content_box_bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.icons {
+    margin-left: var(--space-8);
+    width: 260px;
+    padding: var(--space-3) 0;
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-green);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.icons p {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 90%;
+}
+
+.icons:hover {
+    background-color: var(--color-white);
+    color: var(--color-green);
+}
+
+.search {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-9);
+    padding: var(--space-6) var(--space-7);
+    background-color: white;
+    border-radius: 200px;
+
+}
+
+.search input {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-blue);
+}
+
+.search input::placeholder {
+    color: var(--color-blue);
+    opacity: 1;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+.search button {
+    display: flex;
+    gap: var(--space-3);
+    background-color: var(--color-blue);
+    padding: var(--space-4) var(--space-9);
+    border-radius: 100px;
+    color: var(--color-white);
+    border: none;
+    font-size: 20px;
+    line-height: 90%;
+    letter-spacing: 10%;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.below_color {
+    position: absolute;
+    z-index: -1;
+    inset: auto 0 0 0;
+    background-color: var(--color-light-blue);
+    width: 100%;
+    height: 150px;
+}

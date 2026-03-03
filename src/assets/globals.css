@@ -9,6 +9,8 @@
   --color-light-gray: #EFEEEE;
   --color-white: #ffffff;
 
+  --font-size-sm: 16px;
+  --font-size-lg: 24px;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -22,7 +24,8 @@
   --space-10: 40px;
   --space-12: 48px;
   --space-13: 52px;
-  --space-17:68px;
+  --space-17: 68px;
+  --space-25: 100px;
 }
 
 * {

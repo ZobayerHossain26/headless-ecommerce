@@ -1,6 +1,6 @@
 .sidebar_menu {
     position: absolute;
-    top: 146px;
+    top: 0;
     left: 0;
     max-width: 386px;
     width: 100%;
@@ -9,9 +9,11 @@
     background-color: #0A1A42;
     border-radius: 0 0 50px 50px;
     transform: translateY(-100%);
-    transition: transform 0.5s ease;
+    
+    transition: all 0.8s ease-in-out;
 }
 .open{
+    top: 140px;
     transform: translateY(0);
 }
 .sidebar_nav_menu li {
