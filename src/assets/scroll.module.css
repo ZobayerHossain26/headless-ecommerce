@@ -1,0 +1,31 @@
+.wrapper{
+    overflow: hidden;
+    background-color: var(--color-light-blue);
+    padding: var(--space-5) 0;
+}
+.scroll {
+    display: flex;
+    align-items: center;
+    gap: var(--space-25); 
+    width: max-content;
+    will-change: transform;
+    /* animation: lefttoright 20s linear infinite; */
+}
+.scroll img {
+    flex-shrink: 0;
+    width: auto;
+    max-height:40px ;
+}
+
+
+@keyframes lefttoright {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+.wrapper:hover .scroll{
+    animation-play-state: paused;
+}

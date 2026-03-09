@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "../assets/globals.css";
+import TopBar from "@/components/sections/TopBar";
+import Header from "@/components/sections/Header";
 
 
 export const metadata: Metadata = {
@@ -15,6 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <TopBar />
+        <Header />
         {children}
       </body>
     </html>

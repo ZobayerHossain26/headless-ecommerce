@@ -1,15 +1,18 @@
+import Link from "next/link";
 import styles from "../../assets/header.module.css"
 import Sidebar from "../ui/Sidebar";
 
 
 const Header = () => {
- 
+
     return (
         <section>
             <div className="container">
                 <div className={styles.wrapper}>
                     <div className={styles.logo}>
-                        <img src="/logo.png" alt="Logo_image" />
+                        <Link href="/">
+                            <img src="/logo.png" alt="Logo_image" />
+                        </Link>
                     </div>
                     <div className={styles.headermenu}>
                         <div className="call">

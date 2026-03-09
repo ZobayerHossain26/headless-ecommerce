@@ -38,14 +38,13 @@ const Hero = () => {
                             <SearchIcon />
                             <input placeholder="What are you looking for?" type="text" name="search" aria-label="search" />
                             <button type="submit">
-                                 <span>SEARCH</span>
+                                <span>SEARCH</span>
                                 <LeftArrowIcon />
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
-
             <div className={styles.below_color}>
             </div>
         </section>
