@@ -63,14 +63,14 @@
 
 }
 
-.content .title {
+.title {
     color: var(--color-blue);
     font-size: 20px;
     font-weight: 600;
     line-height: 100%;
 }
 
-.content .price {
+ .price {
     color: var(--color-blue);
     font-size: 20px;
     font-weight: 400;

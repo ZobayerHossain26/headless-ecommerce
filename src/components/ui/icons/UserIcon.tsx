@@ -1,8 +1,5 @@
-type iconProps = {
-    className?: string
-}
-
-const UserIcon = ({ className }: iconProps) => {
+import { IconProps } from "@/lib/types/type"
+const UserIcon = ({ className }: IconProps) => {
     return (
         <svg className={className} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="currentColor" >
             <path d="M9.00038 11.25C6.62282 11.25 4.50847 12.398 3.16237 14.1795C2.87265 14.5629 2.7278 14.7546 2.73253 15.0137C2.7362 15.2139 2.8619 15.4664 3.0194 15.59C3.22327 15.75 3.50578 15.75 4.0708 15.75H13.93C14.495 15.75 14.7775 15.75 14.9814 15.59C15.1389 15.4664 15.2646 15.2139 15.2682 15.0137C15.273 14.7546 15.1281 14.5629 14.8384 14.1795C13.4923 12.398 11.3779 11.25 9.00038 11.25Z"

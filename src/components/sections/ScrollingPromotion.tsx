@@ -17,7 +17,6 @@ const ScrollingPromotion = () => {
         function ScrollAnimation() {
             position -= speed;
             if (Math.abs(position) >= SCROLL.scrollWidth /2) {
-                console.log(position)
                 position = 0;
             }
             SCROLL.style.transform = `translateX(${position}px)`;

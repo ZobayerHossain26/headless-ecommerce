@@ -1,7 +1,9 @@
 const Footer = () => {
     return (
         <footer>
-            hellow footer
+           <div className="container">
+             hellow footer
+           </div>
         </footer>
     )
 }

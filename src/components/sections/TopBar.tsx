@@ -22,9 +22,9 @@ const TopBar = () => {
                     </div>
                     <div className={styles.topbar_right}>
                         <ul className={styles.topbar_right_item}>
-                            <li className={styles.content}>About</li>
-                            <li className={styles.content}>Blogs and News</li>
-                            <li className={styles.content}>Vacancies</li>
+                            <li className={styles.content}><a href='/pages/about'>About</a></li>
+                            <li className={styles.content}><a href='/pages/blogs'>Blogs and News</a></li>
+                            <li className={styles.content}><a href='/pages/about'>Vacancies</a></li>
                         </ul>
                     </div>
                 </div>

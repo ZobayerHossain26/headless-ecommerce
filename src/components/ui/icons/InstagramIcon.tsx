@@ -1,9 +1,5 @@
-
-type iconProps = {
-    className?: string
-}
-
-const InstagramIcon = ({ className }: iconProps) => {
+import { IconProps } from "@/lib/types/type"
+const InstagramIcon = ({ className }: IconProps) => {
     return (
         <svg className={className} width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.9643 4.38079C11.443 4.38079 11.831 3.99277 11.831 3.51413C11.831 3.03548 11.443 2.64746 10.9643 2.64746C10.4857 2.64746 10.0977 3.03548 10.0977 3.51413C10.0977 3.99277 10.4857 4.38079 10.9643 4.38079Z" fill="#B9BFCF" />

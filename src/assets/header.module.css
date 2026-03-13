@@ -42,6 +42,9 @@
     gap: var(--space-17);
 }
 
+.nav_menu li a{
+    color: #fff;
+}
 .menu_icon {
     width: 32px;
     height: 32px;

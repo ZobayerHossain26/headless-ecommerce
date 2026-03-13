@@ -3,8 +3,8 @@ import InstagramIcon from "./InstagramIcon"
 import UserIcon from "./UserIcon"
 import SearchIcon from "./SearchIcon"
 import LeftArrowIcon from "./LeftArrowIcon"
-
-
+import Arrow from "./Arrow"
+import LeftArrow from "./LeftArrow"
 
 
 
@@ -24,5 +24,7 @@ export {
     InstagramIcon,
     UserIcon,
     SearchIcon,
-    LeftArrowIcon 
+    LeftArrowIcon,
+    Arrow,
+    LeftArrow
 }

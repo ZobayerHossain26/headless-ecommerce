@@ -1,8 +1,5 @@
-type iconProps = {
-    className?: string
-}
-
-const Facebook = ({className}:iconProps) => {
+import { IconProps } from "@/lib/types/type"
+const Facebook = ({className}:IconProps) => {
     return (
         <svg className={className}
         width="10" height="16" viewBox="0 0 10 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

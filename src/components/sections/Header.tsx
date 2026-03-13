@@ -23,14 +23,17 @@ const Header = () => {
                     <div className={styles.desktop_menu}>
                         <nav>
                             <ul className={styles.nav_menu}>
-                                <li>Bicycles</li>
+                                <li><a href="/product"> Bicycles</a></li>
                                 <li>Used bicycles</li>
                                 <li>Parts & accessories</li>
                                 <li>Service</li>
-                                <li>Contact</li>
+                                <li><a href="/pages/contact">Contact</a> </li>
                             </ul>
                             <div className={styles.menu_icon}>
+                                <Link href="/cart">
+                              
                                 <img src="/shopping_cart.png" />
+                                  </Link>
                             </div>
                         </nav>
                     </div>
