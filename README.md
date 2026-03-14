@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Headless E-Commerce Store
 
-## Getting Started
+A modern **Headless E-Commerce** project built with **Shopify as the backend** and **Next.js as the frontend**. This project uses **TypeScript**, **CSS**, and **GraphQL queries** to fetch and display store data from Shopify.
 
-First, run the development server:
+---
+
+## Tech Stack
+
+### Frontend
+- Next.js
+- TypeScript
+- CSS
+- GraphQL
+
+### Backend
+- Shopify Storefront API
+
+---
+
+## Project Overview
+
+This is a **headless e-commerce** project where Shopify is used as the commerce backend, and Next.js is used to build the custom frontend.
+
+The frontend fetches data such as:
+- Products
+- Collections
+- Product details
+- Images
+- Prices
+- Variants
+
+All data is fetched from Shopify using **GraphQL queries**.
+
+---
+
+## Features
+
+- Headless Shopify storefront
+- Product data fetched with GraphQL
+- Built with Next.js App Router
+- TypeScript support
+- Custom styling with CSS
+- Dynamic product pages
+- Scalable frontend structure
+
+---
+
+## How It Works
+
+The application connects to Shopify through the **Storefront API**.  
+GraphQL queries are used to retrieve product and collection data, then Next.js renders the data on the frontend.
+
+### Flow
+
+Frontend (Next.js + TypeScript + CSS)  
+↓  
+GraphQL Queries  
+↓  
+Shopify Storefront API  
+↓  
+Shopify Backend
+
+---
+
+## Installation
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/yourusername/headless-ecommerce.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project folder: ```bash cd headless-ecommerce
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies: npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run the development server: npm run dev
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Example Use Cases
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project can be used for:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Custom Shopify storefronts
 
-## Deploy on Vercel
+Learning headless commerce
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Practicing Next.js with real APIs
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Building fast and flexible e-commerce sites
+
+Why Headless Commerce?
+
+Headless commerce allows developers to separate the frontend from the backend. This gives more freedom to build custom user experiences while still using Shopify for product management, checkout, and store operations.
+
+Benefits
+
+Better performance
+
+Full frontend control
+
+Modern development stack
+
+Scalable architecture
+
+Flexible UI/UX design
+
+Learning Goals
+
+This project helped in learning:
+
+Shopify Storefront API
+
+GraphQL queries
+
+Next.js project structure
+
+TypeScript in real projects
+
+Building a headless storefront
+
+Future Improvements
+
+Add cart functionality
+
+Add checkout integration
+
+Add search and filtering
+
+Add pagination
+
+Add authentication
+
+Improve SEO
+
+Add wishlist feature
+
+License
+
+This project is licensed under the MIT License.
+
+Author
+
+Built with Shopify, Next.js, TypeScript, CSS, and GraphQL.
