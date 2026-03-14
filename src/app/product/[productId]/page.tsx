@@ -2,12 +2,15 @@ import Arrow from "@/components/ui/icons/Arrow";
 import styles from "../../../assets/productDetails.module.css"
 import LeftArrow from "@/components/ui/icons/LeftArrow";
 import ProductAction from "./ProductAction";
+import { getProductByID } from "@/lib/shopify/product";
+import { ProductsDetailsType } from "@/lib/types/type";
 
 
 const ProductDetails = async ({ params }: any) => {
   const Params = await params;
-  const { productId } = Params
-  console.log(productId)
+  const { productId } = Params;
+  let id = "gid://shopify/Product/" + productId
+  const productDetails: ProductsDetailsType = await getProductByID(id)
   return (
     <section>
       <div className="container">
@@ -28,13 +31,12 @@ const ProductDetails = async ({ params }: any) => {
               <LeftArrow className={styles.icon} />
             </div>
             <div className={styles.image}>
-              <img src="/product_1.png" alt="products image" />
+              <img src={productDetails.images?.edges[0]?.node.url} alt={productDetails.images?.edges[0]?.node.altText || productDetails.title} />
             </div>
             <div className={styles.imageList}>
-              <div className={styles.item}><img src="/product_1.png" alt="" /></div>
-              <div className={styles.item}><img src="/product_1.png" alt="" /></div>
-              <div className={styles.item}><img src="/product_1.png" alt="" /></div>
-              <div className={styles.item}><img src="/product_1.png" alt="" /></div>
+              <div className={styles.item}><img src={productDetails.images?.edges[1]?.node.url} alt="" /></div>
+              <div className={styles.item}><img src={productDetails.images?.edges[2]?.node.url} alt="" /></div>
+              <div className={styles.item}><img src={productDetails.images?.edges[0].node.url} alt="" /></div>
             </div>
             <div className={`${styles.arrow} ${styles.right}`}>
               <Arrow className={styles.icon} />
@@ -42,13 +44,13 @@ const ProductDetails = async ({ params }: any) => {
           </div>
           <div className="content_wrapper">
             <div className="content_info">
-              <h3 className="title">Gazelle Grenoble C7+ HMB</h3>
-              <p className="price">250$</p>
+              <h3 className="title">{productDetails.title}</h3>
+              <p className="price">{productDetails.variants?.edges[0]?.node.price.amount} <span>{productDetails.variants?.edges[0].node.price.currencyCode}</span></p>
             </div>
             <div className="variant">
-              variant list
+              {productDetails.description}
             </div>
-            <ProductAction  id={productId}/>
+            <ProductAction id={productId} />
           </div>
         </div>
       </div>

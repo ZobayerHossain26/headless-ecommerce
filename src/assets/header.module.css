@@ -42,17 +42,33 @@
     gap: var(--space-17);
 }
 
-.nav_menu li a{
+.nav_menu li a {
     color: #fff;
 }
+
 .menu_icon {
     width: 32px;
     height: 32px;
+    position: relative;
 }
 
 .menu_icon img {
     width: 100%;
     height: 100%;
+}
+
+.count {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    background-color: #fff;
+    color: blue;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (min-width:768px) {
@@ -64,7 +80,7 @@
         display: block;
     }
 
-    .wrapper{
+    .wrapper {
         padding: var(--space-5) 0;
     }
 }

@@ -1,14 +1,38 @@
 "use client"
 import Button from "@/components/ui/Button"
+import { useCart } from "@/context/CartContext"
+
 import { useState } from "react"
-const ProductAction = ({id}:{id:string}) => {
+const ProductAction = ({ id }: { id: string }) => {
+    const { cart, setCart } = useCart()
     const [quantity, setQuantity] = useState<number>(1)
 
     function handleAddToCard() {
-        localStorage.setItem(id,JSON.stringify(quantity))
+        setCart((prevItem) => {
+            const existingItem = prevItem.find((item) => item.id == id)
+            let updateCart
+            if (existingItem) {
+                updateCart = prevItem.map((item) => item.id == id ? { ...item, quantity: item.quantity + 1 } : item)
+            }
+            else {
+                updateCart = [
+                    ...prevItem,
+                    {
+                        id,
+                        title: "test",
+                        quantity: 1,
+                        price: 10
+                    }
+                ]
+            }
+            localStorage.setItem(id, JSON.stringify(updateCart))
+            return updateCart
+        })
+
+        
     }
     function handleBuyNow() {
-       console.log('get:', JSON.parse(localStorage.getItem(id)|| "0"))
+        console.log('get:', JSON.parse(localStorage.getItem(id) || "0"))
     }
     function handleIncrease() {
         setQuantity(prev => prev += 1)

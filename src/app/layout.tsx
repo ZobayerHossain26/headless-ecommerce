@@ -3,6 +3,7 @@ import "../assets/globals.css";
 import TopBar from "@/components/sections/TopBar";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
+import { CartProvider } from "@/context/CartContext";
 
 
 export const metadata: Metadata = {
@@ -18,10 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <TopBar />
-        <Header />
-        {children}
-        <Footer />
+        <CartProvider>
+          <TopBar />
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

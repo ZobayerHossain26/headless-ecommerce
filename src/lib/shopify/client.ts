@@ -25,5 +25,5 @@ export async function shopifyFetch<TVariables>({ query, variables }: FetchParams
     }
     const value = await res.json()
 
-    return value.data.products.edges;
+    return value.data;
 }

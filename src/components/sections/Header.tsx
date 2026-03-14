@@ -1,10 +1,12 @@
+'use client'
 import Link from "next/link";
 import styles from "../../assets/header.module.css"
 import Sidebar from "../ui/Sidebar";
+import { useCart } from "@/context/CartContext";
 
 
 const Header = () => {
-
+    const { cart } = useCart()
     return (
         <section>
             <div className="container">
@@ -31,9 +33,9 @@ const Header = () => {
                             </ul>
                             <div className={styles.menu_icon}>
                                 <Link href="/cart">
-                              
-                                <img src="/shopping_cart.png" />
-                                  </Link>
+                                    <div className={styles.count}><p>{cart[0]?.quantity |0}</p></div>
+                                    <img src="/shopping_cart.png" />
+                                </Link>
                             </div>
                         </nav>
                     </div>
