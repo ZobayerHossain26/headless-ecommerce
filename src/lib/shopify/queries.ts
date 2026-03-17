@@ -33,40 +33,6 @@ export const PRODUCTS_QUERY = `
   }
 `;
 
-
-// export const PRODUCT_BY_ID = `query ProductById($id: ID!) {
-//   product(id: $id) {
-//     id
-//     title
-//     description
-//     vendor
-//     productType
-//     createdAt
-//     handle
-//     tags
-//     status
-//     variants(first: 10) {
-//       edges {
-//         node {
-//           id
-//           title
-//           price
-//           sku
-//           inventoryQuantity
-//         }
-//       }
-//     }
-//     images(first: 5) {
-//       edges {
-//         node {
-//           id
-//           url
-//           altText
-//         }
-//       }
-//     }
-//   }
-// }`
 export const PRODUCT_BY_ID = `
 query ProductById($id: ID!) {
   product(id: $id) {
@@ -77,7 +43,9 @@ query ProductById($id: ID!) {
     productType
     handle
     tags
-
+    featuredImage {
+            url
+          }
     variants(first: 10) {
       edges {
         node {

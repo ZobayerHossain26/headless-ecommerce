@@ -15,7 +15,7 @@ const ProductDetails = async ({ params }: any) => {
     <section>
       <div className="container">
         <div className="breadcrumb">
-          <a href="/" className="breadcrumb--item">Home</a>
+          <a href="/" className="breadcrumb--item">home</a>
           <span aria-hidden="true" className="breadcrumb--separator">
             <Arrow />
           </span>
@@ -23,7 +23,7 @@ const ProductDetails = async ({ params }: any) => {
           <span aria-hidden="true" className="breadcrumb--separator">
             <Arrow />
           </span>
-          <span className="breadcrumb--item">handle title</span>
+          <span className="breadcrumb--item">{productDetails.handle}</span>
         </div>
         <div className="wrapper">
           <div className={styles.media}>
@@ -31,7 +31,7 @@ const ProductDetails = async ({ params }: any) => {
               <LeftArrow className={styles.icon} />
             </div>
             <div className={styles.image}>
-              <img src={productDetails.images?.edges[0]?.node.url} alt={productDetails.images?.edges[0]?.node.altText || productDetails.title} />
+              <img src={productDetails.featuredImage.url} alt={productDetails.featuredImage.altText || productDetails.title} />
             </div>
             <div className={styles.imageList}>
               <div className={styles.item}><img src={productDetails.images?.edges[1]?.node.url} alt="" /></div>
@@ -50,7 +50,7 @@ const ProductDetails = async ({ params }: any) => {
             <div className="variant">
               {productDetails.description}
             </div>
-            <ProductAction id={productId} />
+            <ProductAction id={productId} title={productDetails.title} price={productDetails.variants?.edges[0]?.node.price.amount} image={productDetails.featuredImage.url} />
           </div>
         </div>
       </div>

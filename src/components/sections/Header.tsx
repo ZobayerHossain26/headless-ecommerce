@@ -7,6 +7,7 @@ import { useCart } from "@/context/CartContext";
 
 const Header = () => {
     const { cart } = useCart()
+    const totalCount: number = cart.reduce((sum, item) => sum + item.quantity, 0);
     return (
         <section>
             <div className="container">
@@ -33,7 +34,9 @@ const Header = () => {
                             </ul>
                             <div className={styles.menu_icon}>
                                 <Link href="/cart">
-                                    <div className={styles.count}><p>{cart[0]?.quantity |0}</p></div>
+                                    <div className={styles.count}><p>
+                                        {totalCount}
+                                    </p></div>
                                     <img src="/shopping_cart.png" />
                                 </Link>
                             </div>

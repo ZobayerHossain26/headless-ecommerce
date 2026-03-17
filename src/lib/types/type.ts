@@ -33,10 +33,41 @@ type ProductsDetailsType = {
   id: string;
   title: string;
   description?: string;
-  handle: string;
+  handle?: string;
   vendor?: string;
   images?: EdgeType<ProductImage>;
   variants?: EdgeType<VariantType>;
+  featuredImage: {
+    url: string,
+    altText:string
+  }
 };
 
-export type { IconProps, ProductsDetailsType }
+
+type ProductActionType = {
+  id: string,
+  title: string,
+  price?: string,
+  image?: string
+}
+
+
+
+type CartItemType = {
+  id: string,
+  title: string,
+  quantity: number,
+  price?: string,
+  featuredImage?: {
+    url: string
+  }
+}
+
+
+
+export type {
+  IconProps,
+  ProductsDetailsType,
+  ProductActionType,
+  CartItemType
+}
