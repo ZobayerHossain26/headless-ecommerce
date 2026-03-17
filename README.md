@@ -68,7 +68,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/headless-ecommerce.git
-
+```
 Go to the project folder: ```bash cd headless-ecommerce
 
 Install dependencies: npm install
