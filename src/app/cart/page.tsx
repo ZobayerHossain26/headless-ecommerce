@@ -2,13 +2,13 @@
 
 import { useCart } from "@/context/CartContext"
 import Arrow from "@/components/ui/icons/Arrow";
-import QuantitySelector from "@/components/ui/QuantitySelector";
 import TrashIcon from "@/components/ui/icons/TrashIcon";
+import QuantitySelector from "@/components/ui/QuantitySelector";
 
 
 const Cart = () => {
 
-    const { cart, removeFromCart } = useCart()
+    const { cart, removeFromCart, increaseCartItem, decreaseCartItem } = useCart()
 
     return (
         <section>
@@ -43,8 +43,12 @@ const Cart = () => {
                                     </div>
                                 </div>
                                 <div> {item.price}</div>
-                                <QuantitySelector />
-                                <div>{(parseFloat(item.price!) * item.quantity).toString()}</div>
+                                <QuantitySelector
+                                    value={item.quantity}
+                                    onIncrease={() => increaseCartItem(item.id)}
+                                    onDecrease={() => decreaseCartItem(item.id)}
+                                />
+                                <div>{(parseFloat(item.price!) * item.quantity).toFixed(2).toString()}</div>
                             </div>
                         ))
                     }

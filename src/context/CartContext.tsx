@@ -7,9 +7,8 @@ type CartContextType = {
     cart: CartItemType[],
     addToCart: (productId: string, title: string, quantity: number, price: string, image: string) => void,
     removeFromCart: (productId: string) => void,
-    quantity: number,
-    handleIncrease: () => void,
-    handleDecrease: () => void
+    increaseCartItem: (productId: string) => void,
+    decreaseCartItem: (productId: string) => void
 }
 
 const CartContext = createContext<CartContextType | null>(null)
@@ -17,7 +16,6 @@ const CartContext = createContext<CartContextType | null>(null)
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
     const [cart, setCart] = useState<CartItemType[]>([])
-    const [quantity, setQuantity] = useState<number>(1)
 
     const addToCart: CartContextType["addToCart"] = (productId, title, quantity, price, image) => {
 
@@ -59,19 +57,37 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         });
     }
 
-    function handleIncrease() {
-        setQuantity(prev => prev + 1);
+    const increaseCartItem: CartContextType["increaseCartItem"] = (productId) => {
+        setCart((prev) => {
+            const updateCart = prev.map((item) => item.id === productId ? {
+                ...item,
+                quantity: item.quantity + 1
+
+            } : item)
+
+            localStorage.setItem("cart", JSON.stringify(updateCart));
+            return updateCart
+        })
+
     }
 
-    function handleDecrease() {
-        setQuantity(prev => Math.max(prev - 1, 1));
+    const decreaseCartItem: CartContextType["decreaseCartItem"] = (productId) => {
+        setCart((prevItem) => {
+            const updateCart = prevItem.map((item) => item.id === productId ? {
+                ...item,
+                quantity: Math.max(item.quantity - 1,1)
+            } : item)
+            localStorage.setItem("cart", JSON.stringify(updateCart));
+            return updateCart
+        })
     }
+
     useEffect(() => {
         const cartData = localStorage.getItem("cart");
         setCart(cartData ? JSON.parse(cartData) : []);
     }, []);
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, handleIncrease, handleDecrease, quantity }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, increaseCartItem, decreaseCartItem }}>
             {children}
         </CartContext.Provider>
     )

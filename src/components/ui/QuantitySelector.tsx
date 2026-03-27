@@ -1,16 +1,12 @@
 "use client"
 
-import { useCart } from "@/context/CartContext"
-
-
-const QuantitySelector = () => {
-    const { quantity, handleDecrease, handleIncrease} = useCart()
-
+import { QuantitySelectorType } from "@/lib/types/type"
+const QuantitySelector = ({ value, onIncrease, onDecrease }: QuantitySelectorType) => {
     return (
         <div className="product-form--input">
-            <button className="quantity-button" onClick={handleDecrease}>-</button>
-            <div className="quantity--input">{quantity}</div>
-            <button className="quantity-button" onClick={handleIncrease}>+</button>
+            <button className="quantity-button" onClick={onDecrease}>-</button>
+            <div className="quantity--input">{value}</div>
+            <button className="quantity-button" onClick={onIncrease}>+</button>
         </div>
     )
 }

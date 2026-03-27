@@ -39,7 +39,7 @@ type ProductsDetailsType = {
   variants?: EdgeType<VariantType>;
   featuredImage: {
     url: string,
-    altText:string
+    altText: string
   }
 };
 
@@ -63,11 +63,16 @@ type CartItemType = {
   }
 }
 
-
+type QuantitySelectorType = {
+  value: number,
+  onIncrease: () => void,
+  onDecrease: () => void
+}
 
 export type {
   IconProps,
   ProductsDetailsType,
   ProductActionType,
-  CartItemType
+  CartItemType,
+  QuantitySelectorType
 }
